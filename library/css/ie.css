@@ -1,0 +1,718 @@
+@charset "UTF-8";
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/******************************************************************
+IMPORTS & DEPENDENCIES
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/* ORANGE */
+/* BLUE */
+/* LT GRAY */
+/* DK GRAY */
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Typography
+
+Need to import a font or set of icons for your site? Drop them in
+here or just use this to establish your typographical grid. Or not.
+Do whatever you want to...GOSH!
+
+Helpful Articles:
+http://trentwalton.com/2012/06/19/fluid-type/
+http://ia.net/blog/responsive-typography-the-basics/
+http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+
+******************************************************************/
+/*********************
+FONT FACE (IN YOUR FACE)
+*********************/
+/*  To embed your own fonts, use this syntax
+  and place your fonts inside the
+  library/fonts folder. For more information
+  on embedding fonts, go to:
+  http://www.fontsquirrel.com/
+  Be sure to remove the comment brackets.
+*/
+/*  @font-face {
+      font-family: 'Font Name';
+      src: url('library/fonts/font-name.eot');
+      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+*/
+@font-face {
+  font-family: "starter-set";
+  src: url("../fonts/starter-set.eot");
+  src: url("../fonts/starter-set.eot?#iefix") format("embedded-opentype"), url("../fonts/starter-set.woff") format("woff"), url("../fonts/starter-set.ttf") format("truetype"), url("../fonts/starter-set.svg#starter-set") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[data-icon]:before {
+  font-family: "starter-set" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+[class^="starter-"]:before,
+[class*=" starter-"]:before {
+  font-family: "starter-set" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.starter-facebook:before {
+  content: "\e000"; }
+
+.starter-twitter:before {
+  content: "\e001"; }
+
+.starter-instagram:before {
+  content: "\e002"; }
+
+.starter-youtube:before {
+  content: "\e003"; }
+
+.starter-mail:before {
+  content: "\e004"; }
+
+.starter-menu:before {
+  content: "\e005"; }
+
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
+*/
+/*
+ i imported this one in the functions file so bones would look sweet.
+ don't forget to remove it for your site.
+*/
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+p {
+  -ms-word-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig"; }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins Stylesheet
+
+This is where you can take advantage of Sass' great features: Mixins.
+I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+Helpful:
+http://sachagreif.com/useful-sass-mixins/
+http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+
+******************************************************************/
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Grid Styles
+
+Since the example grid is based on media queries, so rather than
+setup some js library that would make IE8 and below understand
+media queries, let's just add some styles that serves a fixed grid.
+
+Again, if you want to roll your own, just remove this junk and put
+whatever you use in here.
+
+******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection.
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+/*
+IMPORTANT NOTE ABOUT SASS 3.3 & UP
+You can't use @extend within media queries
+anymore, so just be aware that if you drop
+them in here, they won't work.
+*/
+/*********************
+NAVIGATION STYLES
+*********************/
+/* .menu is clearfixed inside mixins.scss */
+.menu {
+  /* end .menu ul */ }
+  .menu ul {
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .menu ul li {
+      /*
+      plan your menus and drop-downs wisely.
+      */ }
+      .menu ul li a {
+        /*
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
+        */ }
+
+/* end .menu */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* entry content */
+.entry-content {
+  /* at this larger size, we can start to align images */ }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left; }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both; }
+
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+.col-1_1, .col-1_2, .col-1_3, .footer-col-2_1, .col-2_1, .col-2_2, .col-2_3, .col-3_1, .col-3_2, .col-3_3, .col-4_1, .col-4_2, .col-4_3 {
+  border: 6px solid #fff; }
+
+.col-1_1, .col-1_2, .col-1_3, .footer-col-2_1, .col-4_1, .col-4_3 {
+  height: 405px; }
+
+.col-2_1, .col-2_2, .col-2_3 {
+  height: 273px; }
+
+.col-3_1, .col-3_2, .col-3_3 {
+  height: 95px; }
+
+.col-1_1 {
+  /*
+  .headline {
+  	bottom: -310px;
+  }
+  */ }
+
+.col-1_3:before {
+  content: "";
+  background-image: url("../images/arrow.png");
+  top: -32px;
+  width: 52px;
+  height: 28px;
+  display: inline-block;
+  position: relative; }
+
+.col-1_3.next_seminar {
+  padding-top: 0px; }
+
+.col-2_2 {
+  padding-top: 60px; }
+
+.col-3_1 {
+  padding: 0px; }
+  .col-3_1 img {
+    height: 75px;
+    float: right;
+    display: block;
+    margin: 5px; }
+  .col-3_1 .h2, .col-3_1 h2 {
+    font-size: 30px !important;
+    display: block;
+    float: left;
+    padding: 27px;
+    letter-spacing: 1px;
+    line-height: 27px !important; }
+
+.col-4_1 {
+  text-align: center;
+  font-size: 25px; }
+  .col-4_1 .h2, .col-4_1 h2 {
+    text-shadow: 0 0 !important;
+    font-size: 40px !important;
+    line-height: 45px !important;
+    letter-spacing: 2px;
+    margin-bottom: 30px !important; }
+  .col-4_1 .social-icons {
+    margin-top: 30px; }
+    .col-4_1 .social-icons a, .col-4_1 .social-icons a:visited {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 40px; }
+    .col-4_1 .social-icons a:hover {
+      color: #F15D3B;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+
+.col-4_2 h2, .col-4_2 .h2 {
+  font-size: 42px !important;
+  line-height: 45px !important; }
+
+/*
+.row-1:before,.row-1:after {
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-top: 25px solid black;
+	position: absolute;
+    right: 250px;
+    margin-top: -25px
+}
+
+.row-1:after {
+	
+	border-top: 23px solid white;
+	
+	
+}
+*/
+.page-title {
+  font-size: 42px; }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  width: 760px; }
+
+/*********************
+HEADER STYLES
+*********************/
+#logo {
+  background-image: url("../images/abc-logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 174px;
+  height: 174px;
+  text-indent: -99999px;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+#inner-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav.top-nav {
+  border: 0;
+  background-color: transparent;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav.top-nav ul {
+    background: #323944;
+    margin-top: 0; }
+  .nav.top-nav li {
+    float: left;
+    position: relative;
+    border: 1px solid #48484A;
+    margin-right: 9px;
+    width: 265px;
+    text-align: center;
+    text-transform: uppercase;
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    /* showing sub-menus */ }
+    .nav.top-nav li a {
+      border-bottom: 0;
+      color: #48484A;
+      font-family: Oswald, Helvetica, Arial, sans-serif;
+      letter-spacing: 1px;
+      font-size: 20px;
+      padding: 0.75em;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
+      .nav.top-nav li a:hover, .nav.top-nav li a:focus {
+        color: #fff;
+        text-decoration: none; }
+    .nav.top-nav li ul.sub-menu,
+    .nav.top-nav li ul.children {
+      background-color: red;
+      margin-top: 0;
+      border: 1px solid #ccc;
+      border-top: 0;
+      position: absolute;
+      visibility: hidden;
+      z-index: 8999;
+      /* highlight sub-menu current page */ }
+      .nav.top-nav li ul.sub-menu li,
+      .nav.top-nav li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+        .nav.top-nav li ul.sub-menu li a,
+        .nav.top-nav li ul.children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block;
+          width: 180px;
+          border-bottom: 1px solid #ccc; }
+        .nav.top-nav li ul.sub-menu li:last-child a,
+        .nav.top-nav li ul.children li:last-child a {
+          border-bottom: 0; }
+        .nav.top-nav li ul.sub-menu li ul,
+        .nav.top-nav li ul.children li ul {
+          top: 0;
+          left: 100%; }
+    .nav.top-nav li:hover > ul {
+      top: auto;
+      visibility: visible; }
+  .nav.top-nav li:hover {
+    border: 1px solid #F15D3B;
+    background-color: #F15D3B; }
+
+/* end .nav */
+.nav > li > a:focus, .nav > li > a:hover {
+  border: 0px solid transparent !important;
+  background-color: transparent !important; }
+
+.nav {
+  text-align: center; }
+
+.nav.footer-nav {
+  border: 0;
+  text-align: center;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav.footer-nav ul {
+    background: #fff;
+    margin-top: 0; }
+  .nav.footer-nav li {
+    position: relative;
+    margin-right: 0px;
+    width: 265px;
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    /* showing sub-menus */ }
+    .nav.footer-nav li a {
+      border-bottom: 0;
+      color: #fff;
+      font-family: Oswald, Helvetica, Arial, sans-serif;
+      letter-spacing: 1px;
+      font-size: 15px;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
+      .nav.footer-nav li a:hover, .nav.footer-nav li a:focus {
+        text-decoration: none;
+        border-bottom: 0;
+        color: #fff;
+        font-family: Oswald, Helvetica, Arial, sans-serif;
+        letter-spacing: 1px;
+        font-size: 15px;
+        color: #F15D3B; }
+    .nav.footer-nav li ul.sub-menu,
+    .nav.footer-nav li ul.children {
+      margin-top: 0;
+      border-top: 0;
+      position: absolute;
+      visibility: hidden;
+      z-index: 8999;
+      bottom: 35px;
+      /* highlight sub-menu current page */ }
+      .nav.footer-nav li ul.sub-menu li,
+      .nav.footer-nav li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+        .nav.footer-nav li ul.sub-menu li a,
+        .nav.footer-nav li ul.children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block;
+          border-bottom: 1px solid #ccc;
+          color: #323944; }
+          .nav.footer-nav li ul.sub-menu li a:hover, .nav.footer-nav li ul.sub-menu li a:focus,
+          .nav.footer-nav li ul.children li a:hover,
+          .nav.footer-nav li ul.children li a:focus {
+            color: #F15D3B; }
+        .nav.footer-nav li ul.sub-menu li:last-child a,
+        .nav.footer-nav li ul.children li:last-child a {
+          border-bottom: 0; }
+        .nav.footer-nav li ul.sub-menu li ul,
+        .nav.footer-nav li ul.children li ul {
+          top: 0;
+          left: 100%; }
+    .nav.footer-nav li:hover > ul {
+      top: auto;
+      visibility: visible; }
+  .nav.footer-nav li:hover {
+    color: #F15D3B; }
+
+/* end .nav */
+#menu-footer .menu-item-has-children a::after {
+  content: " ☰";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 10px;
+  margin-bottom: -10px;
+  display: inline-block;
+  padding-left: 5px;
+  border: 0;
+  font-family: helvetica, arial, sans-serif; }
+#menu-footer .menu-item-has-children .sub-menu a::after {
+  content: ""; }
+
+/*********************
+POST AND CONTENT STYLES
+*********************/
+#inner-content {
+  padding: 0px; }
+
+#content {
+  margin-top: 1.5em;
+  border-bottom: 1px solid;
+  margin-bottom: 24px; }
+
+/* entry content */
+.entry-content {
+  padding-left: 0px; }
+
+/* end .entry-content */
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+  margin-top: 0em;
+  display: block; }
+
+.widgettitle {
+  border-bottom: 2px solid #444;
+  margin-bottom: 0.75em; }
+
+.widget {
+  padding: 0 10px;
+  margin: 2.2em 0; }
+  .widget ul li {
+    margin-bottom: 0.75em;
+    /* deep nesting */ }
+    .widget ul li ul {
+      margin-top: 0.75em;
+      padding-left: 1em; }
+
+/* links widget */
+/* meta widget */
+/* pages widget */
+/* recent-posts widget */
+/* archives widget */
+/* tag-cloud widget */
+/* calendar widget */
+/* category widget */
+/* recent-comments widget */
+/* search widget */
+/* text widget */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links ul li {
+  /*
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */ }
+
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+.wrap {
+  width: 1040px; }
+
+.col-2_2 {
+  padding-top: 80px; }
+
+.col-3_1 .h2, .col-3_1 h2 {
+  font-size: 50px !important; }
+
+.col-4_1 {
+  font-size: 35px; }
+  .col-4_1 .h2, .col-4_1 h2 {
+    font-size: 60px !important;
+    line-height: 65px !important; }
+  .col-4_1 .social-icons a, .col-4_1 .social-icons a:visited {
+    font-size: 35px; }
+
+/*
+you can call the larger styles if you want, but there's really no need
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/
+
+/*# sourceMappingURL=ie.css.map */

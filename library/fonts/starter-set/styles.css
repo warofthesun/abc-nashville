@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "starter-set";
+  src:url("fonts/starter-set.eot");
+  src:url("fonts/starter-set.eot?#iefix") format("embedded-opentype"),
+    url("fonts/starter-set.woff") format("woff"),
+    url("fonts/starter-set.ttf") format("truetype"),
+    url("fonts/starter-set.svg#starter-set") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "starter-set" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="starter-"]:before,
+[class*=" starter-"]:before {
+  font-family: "starter-set" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.starter-facebook:before {
+  content: "\e000";
+}
+.starter-twitter:before {
+  content: "\e001";
+}
+.starter-instagram:before {
+  content: "\e002";
+}
+.starter-youtube:before {
+  content: "\e003";
+}
+.starter-mail:before {
+  content: "\e004";
+}
+.starter-menu:before {
+  content: "\e005";
+}

@@ -1,0 +1,1 @@
+[08-Jan-2018 02:00:36 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/splitpixel/public_html/artsandbiz/wp-content/themes/abc/404.php on line 1
