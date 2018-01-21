@@ -330,7 +330,7 @@ GENERAL STYLES
 .col-1_3:before {
   content: "";
   background-image: url("../images/arrow.png");
-  top: -32px;
+  top: -55px;
   width: 52px;
   height: 28px;
   display: inline-block;
