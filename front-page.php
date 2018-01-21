@@ -8,7 +8,7 @@
 			<div id="content" class="home_page">
 				<div id="inner-content" class="wrap cf">
 					<?php $query = new WP_Query( 'pagename=home-page' ); ?>
-					
+
 						<main id="main"  class="m-all t-3of3 d-6of6 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 							<!--ROW 1-->
 							<div class="m-all t-3of3 d-6of6 row-1 cf">
@@ -21,12 +21,12 @@
 							$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'section-one' );
 							$url = $thumb['0'];
 							?>
-							
-							
+
+
 								<a href="<?php the_permalink(); ?>">
 									<div class="m-all t-2of3 d-2of3 col-1_1 background-image" style="background-image: url(<?=$url?>);">
 									<h2 class="headline"><?php the_title(); ?></h2>
-								
+
 								</div>
 								</a>
 								<?php endwhile; ?>
@@ -51,13 +51,13 @@
 									if ( $events->have_posts() ) :
 										while ( $events->have_posts() ) : $events->the_post(); ?>
 									<h2 class="headline">next seminar</h2>
-									
+
 									<div class="event_date"><?php eventbrite_event_date(); ?></div>
 									<?php  sprintf(  esc_url( get_permalink() )  ); ?>
 									<?php $url = get_permalink();
 									$newUrl = str_replace('/home-page/', '/workshops-for-artists/', $url); ?>
 									<a href="<?php echo $newUrl; ?>" class="event_title"><?php the_title(); ?></a>
-									<div class="event_content"><?php the_content(); ?></div>
+									<!--div class="event_content"><?php //the_content(); ?></div-->
 									<?php endwhile; endif; ?>
 									<a href="<?php echo $newUrl; ?>" class="h2 event_tickets">buy tickets</a>
 									<a href="/workshops-for-artists" class="event_calendar">view calendar</a>
@@ -85,11 +85,11 @@
 												<?php endwhile; ?>
 											<?php endif; ?>
 											<?php wp_reset_query(); ?>
-										
+
 										<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 									<a href="<?php the_field('row-2_2-link'); ?>">
 										<div class="m-all t-1of3 d-1of3 col-2_2">
-									
+
 												<h2><?php the_field('row-2_2'); ?></h2>
 
 										</div>
@@ -109,7 +109,7 @@
 											<h2 class="headline"><?php the_title(); ?></h2>
 										</div>
 										</a>
-										<?php endwhile; endif; 
+										<?php endwhile; endif;
 										wp_reset_query(); ?>
 								</div>
 							<!--END ROW 2-->
@@ -117,19 +117,19 @@
 							<div class="m-all t-3of3 d-6of6 cf">
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 									<a href="<?php the_field('row-3_1-link'); ?>" class="m-all t-2of3 d-2of3 col-3_1" style="text-decoration: none ">
-								
+
 									<img src="wp-content/themes/abc/library/images/periscope-logo.png"><h2><?php the_field('row-3_1'); ?></h2>
-										
+
 									</a>
-								
-								
+
+
 								<div class="m-all t-1of3 d-1of3 col-3_3">
 										<a href="<?php the_field('row-3_2-link'); ?>" style="text-decoration:none;">
-										
+
 										<h2><?php the_field('row-3_2'); ?></h2>
-											
+
 										</a>
-									
+
 								</div>
 								<?php endwhile; endif ?>
 							</div>
@@ -154,8 +154,8 @@
 										<a href="http://www.youtube.com/user/<?php the_field('youtube'); ?>" class="starter-youtube" target="_blank"></a>
 									</div>
 									<?php
-									
-										
+
+
 										}
 									}
 									/* Restore original Post Data */
@@ -179,13 +179,13 @@
 								</div>
 								</div>
 								</a>
-								<?php endwhile; endif; 
+								<?php endwhile; endif;
 								wp_reset_query(); ?>
 							</div>
 							<!--END ROW 4-->
-							
+
 						</main>
-							
+
 
 				</div>
 
