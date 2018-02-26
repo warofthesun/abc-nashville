@@ -18,6 +18,11 @@ GENERAL STYLES
 *********************/
 #mobile-nav {
 	display: none;
+
+}
+
+#mobile-nav.show {
+	display: none !important;
 }
 
 #inner-header {
