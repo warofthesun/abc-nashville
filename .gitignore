@@ -51,7 +51,7 @@ tmp/
 temp/
 ._*
 .Trashes
-
+package-lock.json
 .svn
 
 *.codekit
