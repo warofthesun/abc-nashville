@@ -13,11 +13,8 @@
 ~~#### Make top nav work as dropdowns~~
 
 ~~#### Remove  _"Your Account"_  words from the [Post an Opportunity](http://abcnashville.org/post-an-opportunity) page~~
-<<<<<<< HEAD
-=======
 
 ~~#### Remove Event Summary from event module~~
->>>>>>> event
 
 #### Change Event summary to pull from separate field on event page
 
