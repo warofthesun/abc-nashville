@@ -109,10 +109,14 @@ function loadGravatars() {
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
-	
+
 	$("#mobile-nav").click(function(){
         $(".nav").toggleClass("show");
 				$("#mobile-nav").toggleClass("show");
+			});
+
+	$("#menu-header-nav .menu-item-has-children").click(function(){
+        $(this).toggleClass("show");
 			});
   /*
    * Let's fire off the gravatar function

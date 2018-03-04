@@ -1321,6 +1321,41 @@ GENERAL STYLES
     opacity: 1;
     height: 100%; }
 
+@media only screen and (max-width: 768px) {
+  #inner-header .menu-item {
+    border-top: 1px solid white;
+    padding: .5em 0; }
+  #inner-header .menu-item-has-children > a:after {
+    content: " \f107";
+    text-align: center;
+    width: 100%;
+    display: inline;
+    font-family: fontawesome; }
+  #inner-header .menu-item-has-children .sub-menu {
+    height: 0;
+    opacity: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -webkit-transition: all .5s;
+    transition: all .5s; }
+    #inner-header .menu-item-has-children .sub-menu .menu-item {
+      border-top: 0px;
+      padding: 0; }
+  #inner-header .menu-item-has-children.show > a {
+    font-weight: bold; }
+    #inner-header .menu-item-has-children.show > a:after {
+      content: " \f106";
+      text-align: center;
+      width: 100%;
+      display: inline;
+      font-family: fontawesome; }
+  #inner-header .menu-item-has-children.show .sub-menu {
+    height: 100%;
+    opacity: 1;
+    margin-bottom: 2em; }
+    #inner-header .menu-item-has-children.show .sub-menu a {
+      font-weight: normal; } }
+
 body {
   font-family: Verdana, Helvetica, Arial, sans-serif;
   font-size: 16px;
