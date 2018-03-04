@@ -115,7 +115,7 @@ jQuery(document).ready(function($) {
 				$("#mobile-nav").toggleClass("show");
 			});
 
-	$("#menu-header-nav .menu-item-has-children").click(function(){
+	$(".top-nav .menu-item-has-children").click(function(){
         $(this).toggleClass("show");
 			});
   /*
