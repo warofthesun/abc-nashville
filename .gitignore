@@ -37,7 +37,7 @@ nbproject/
 ############
 ## Misc
 ############
-_*
+__*
 bin/
 tmp/
 *.tmp
@@ -51,7 +51,7 @@ tmp/
 temp/
 ._*
 .Trashes
-
+package-lock.json
 .svn
 
 *.codekit

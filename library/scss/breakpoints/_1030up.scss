@@ -1,0 +1,49 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+.wrap {
+  width: 1040px;
+}
+
+.col-2_2 {
+	padding-top: 80px;
+	
+}
+
+.col-3_1 {
+	.h2, h2 {
+		font-size: 50px !important;
+	}
+}
+
+.col-4_1 {
+	font-size: 35px;
+
+	.h2, h2 {
+		
+		font-size: 60px !important;
+		line-height: 65px !important;
+		
+	}
+
+	.social-icons {
+		
+
+		a, a:visited {
+			font-size: 35px;
+
+		}
+
+		
+
+
+	}
+}

@@ -1,6 +1,6 @@
 			<div class="footer_blocks wrap cf">
 			<div class="m-all t-1of3 d-1of3 col-4_1">
-			
+
 				<h2>get our updates!</h2>
 				<?php $query = new WP_Query( 'pagename=home-page' ); ?>
 					<?php
@@ -18,15 +18,15 @@
 					<a href="http://www.youtube.com/user/<?php the_field('youtube'); ?>" class="starter-youtube" target="_blank"></a>
 				</div>
 				<?php
-				
-					
+
+
 					}
 				}
 				/* Restore original Post Data */
 				wp_reset_postdata();
 				?>
 			</div>
-			
+
 				<?php query_posts('category_name=Section Three&posts_per_page=1'); ?>
 
 				<?php if (have_posts()) : ?>
@@ -46,7 +46,7 @@
 				<?php endwhile; ?>
 				<?php endif; ?>
 				<?php wp_reset_query(); ?>
-			
+
 			<div class="m-all t-1of3 d-1of3 col-1_3 next_seminar">
 				<?php
 					// Set up and call our Eventbrite query.
@@ -66,15 +66,15 @@
 					if ( $events->have_posts() ) :
 						while ( $events->have_posts() ) : $events->the_post(); ?>
 				<h2 class="headline">next seminar</h2>
-				
+
 				<div class="event_date"><?php eventbrite_event_date(); ?></div>
 				<?php the_title( sprintf( '<div class="event_title">', esc_url( get_permalink() ) ), '</div>' ); ?>
-				<div class="event_content"><?php the_content(); ?></div>
+				<!--div class="event_content"><?php //the_content(); ?></div-->
 				<?php endwhile; endif; ?>
 				<a href="/our-events" class="h2 event_tickets">buy tickets</a>
 				<a href="/workshops-for-artists/" class="event_calendar">view calendar</a>
 			</div>
-				
+
 			</div>
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
@@ -112,8 +112,8 @@
 						<a href="http://www.youtube.com/user/<?php the_field('youtube'); ?>" class="starter-youtube" target="_blank"></a>
 					</div>
 					<?php
-					
-						
+
+
 						}
 					}
 					/* Restore original Post Data */

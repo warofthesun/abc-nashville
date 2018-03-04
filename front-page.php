@@ -57,7 +57,7 @@
 									<?php $url = get_permalink();
 									$newUrl = str_replace('/home-page/', '/workshops-for-artists/', $url); ?>
 									<a href="<?php echo $newUrl; ?>" class="event_title"><?php the_title(); ?></a>
-									<div class="event_content"><?php the_content(); ?></div>
+									<!--div class="event_content"><?php //the_content(); ?></div-->
 									<?php endwhile; endif; ?>
 									<a href="<?php echo $newUrl; ?>" class="h2 event_tickets">buy tickets</a>
 									<a href="/workshops-for-artists" class="event_calendar">view calendar</a>

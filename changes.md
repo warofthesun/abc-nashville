@@ -6,12 +6,19 @@
 
 ~~#### Eventbrite homepage widget goes to 404~~
 
-#### Update Give database
+~~#### Update Give database~~
 
-#### Change 404 message
+~~#### Change 404 message~~
 
 ~~#### Make top nav work as dropdowns~~
 
 ~~#### Remove  _"Your Account"_  words from the [Post an Opportunity](http://abcnashville.org/post-an-opportunity) page~~
+<<<<<<< HEAD
+=======
+
+~~#### Remove Event Summary from event module~~
+>>>>>>> event
 
 #### Change Event summary to pull from separate field on event page
+
+#### Fix footer spacing
