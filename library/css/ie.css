@@ -337,15 +337,17 @@ GENERAL STYLES
 	}
 	*/ }
 
+/*
 .col-1_3:before {
-  content: "";
-  background-image: url("../images/arrow.png");
-  top: -55px;
-  width: 52px;
-  height: 28px;
-  display: inline-block;
-  position: relative; }
-
+	content: "";
+	background-image: url('../images/arrow.png');
+	top: -55px;
+    width: 52px;
+    height: 28px;
+    display: inline-block;
+    position: relative;
+}
+*/
 .col-1_3.next_seminar {
   padding-top: 0px; }
 

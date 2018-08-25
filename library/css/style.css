@@ -2298,14 +2298,17 @@ GENERAL STYLES
 		bottom: -310px;
 	}
 	*/ }
-  .col-1_3:before {
-    content: "";
-    background-image: url("../images/arrow.png");
-    top: -55px;
+  /*
+.col-1_3:before {
+	content: "";
+	background-image: url('../images/arrow.png');
+	top: -55px;
     width: 52px;
     height: 28px;
     display: inline-block;
-    position: relative; }
+    position: relative;
+}
+*/
   .col-1_3.next_seminar {
     padding-top: 0px; }
   .col-2_2 {
