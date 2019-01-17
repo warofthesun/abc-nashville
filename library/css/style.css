@@ -1314,11 +1314,13 @@ GENERAL STYLES
 
 #inner-header .nav {
   opacity: 0;
+  display: none;
   height: 0;
   -webkit-transition: all .5s;
   transition: all .5s; }
   #inner-header .nav.show {
     opacity: 1;
+    display: inline-block;
     height: 100%; }
 
 @media only screen and (max-width: 768px) {
