@@ -23,106 +23,6 @@
             "maxlength": ""
         },
         {
-            "key": "field_562d651867f43",
-            "label": "Email Us",
-            "name": "email_us",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "formatting": "html",
-            "maxlength": ""
-        },
-        {
-            "key": "field_562d656f67f44",
-            "label": "Facebook",
-            "name": "facebook",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "http:\/\/www.facebook.com\/",
-            "append": "",
-            "formatting": "html",
-            "maxlength": ""
-        },
-        {
-            "key": "field_562d659a67f45",
-            "label": "Twitter",
-            "name": "twitter",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "http:\/\/www.twitter.com\/",
-            "append": "",
-            "formatting": "html",
-            "maxlength": ""
-        },
-        {
-            "key": "field_562d65b367f46",
-            "label": "Instagram",
-            "name": "instagram",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "http:\/\/www.instagram.com\/",
-            "append": "",
-            "formatting": "html",
-            "maxlength": ""
-        },
-        {
-            "key": "field_562d65ce67f47",
-            "label": "YouTube",
-            "name": "youtube",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "http:\/\/www.youtube.com\/user\/",
-            "append": "",
-            "formatting": "html",
-            "maxlength": ""
-        },
-        {
             "key": "field_5e235f0a879af",
             "label": "Social Icons",
             "name": "social_icons",
@@ -204,5 +104,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1579378847
+    "modified": 1579446068
 }

@@ -1,7 +1,27 @@
 {
     "key": "group_5e2358203d717",
     "title": "Additional Content",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_57c3507670310",
+            "label": "Additional Content",
+            "name": "additional_content",
+            "type": "wysiwyg",
+            "instructions": "Content entered here will appear below the Eventbrite information.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all",
+            "delay": 0
+        }
+    ],
     "location": [
         [
             {
@@ -16,8 +36,8 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
-    "active": true,
+    "hide_on_screen": "",
+    "active": 0,
     "description": "",
-    "modified": 1579374624
+    "modified": 1579446091
 }
