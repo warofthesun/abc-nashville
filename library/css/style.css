@@ -1815,6 +1815,9 @@ POSTS & CONTENT STYLES
 .entry-title {
   margin: 0; }
 
+.event-post-type-title {
+  margin-bottom: 2em; }
+
 .page-title {
   font-family: Oswald, Helvetica, Arial, sans-serif;
   text-transform: uppercase;

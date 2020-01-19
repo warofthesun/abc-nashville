@@ -9,7 +9,7 @@
 		<div id="inner-content" class="wrap cf">
 			<div class="m-all t-2of3 d-6of7">
 				<header class="article-header">
-					<h1 class="single-title custom-post-type-title"><?php the_title(); ?></h1>
+					<h1 class="single-title event-post-type-title"><?php the_title(); ?></h1>
 				</header>
 			</div>
 			<div class="m-all t-1of3 d-2of7 cf">
