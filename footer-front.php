@@ -19,29 +19,21 @@
 						)); ?>
 					</nav>
 					<div class="wrap">
-					<?php $query = new WP_Query( 'pagename=home-page' ); ?>
-										<?php
-											// The Loop
-											if ( $query->have_posts() ) {
-												while ( $query->have_posts() ) {
-													$query->the_post();
-													?>
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>   |  <?php the_field('footer_info'); ?></p>
-					<div class="social-icons">
-						<a href="<?php the_field('email_us'); ?>" class="starter-mail"></a>
-						<a href="http://www.facebook.com/<?php the_field('facebook'); ?>" class="starter-facebook" target="_blank"></a>
-						<a href="http://www.twitter.com/<?php the_field('twitter'); ?>" class="starter-twitter" target="_blank"></a>
-						<a href="http://www.instagram.com/<?php the_field('instagram'); ?>" class="starter-instagram" target="_blank"></a>
-						<a href="http://www.youtube.com/user/<?php the_field('youtube'); ?>" class="starter-youtube" target="_blank"></a>
-					</div>
-					<?php
 					
-						
-						}
-					}
-					/* Restore original Post Data */
-					wp_reset_postdata();
-					?>
+					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>   |  <?php the_field('footer_info', 'option'); ?></p>
+					<?php if (have_rows('social_icons', 'option')) : ?>
+					<div class="social-icons">
+					<?php while(have_rows('social_icons', 'option')) : the_row(); ?>
+					<?php 
+						$link = get_sub_field('social_link');
+					    $link_url = $link['url'];
+					    $link_title = $link['title'];
+					    $link_target = $link['target'] ? $link['target'] : '_self';
+					    ?>
+					    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php the_sub_field('social_icon'); ?></a>
+						<?php endwhile; ?>
+					</div>
+					<?php endif; ?>
 					</div>
 				</div>
 

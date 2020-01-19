@@ -565,9 +565,9 @@ p {
   -ms-word-wrap: break-word;
   word-break: break-word;
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+      hyphens: manual;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
@@ -923,27 +923,26 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, .comment-reply-link, #submit {
+.blue-btn, .comment-reply-link, #submit, .primary-btn {
   display: inline-block;
   position: relative;
   font-family: Verdana, Helvetica, Arial, sans-serif;
   text-decoration: none;
-  color: #fff;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  color: #fff !important;
+  font-size: 1em;
+  line-height: 1;
   font-weight: normal;
-  padding: 0 24px;
+  padding: 10px 24px;
   border-radius: 4px;
   border: 0;
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+  .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .primary-btn:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .blue-btn:active, .comment-reply-link:active, #submit:active {
+  .blue-btn:active, .comment-reply-link:active, #submit:active, .primary-btn:active {
     top: 1px; }
 
 /*
@@ -957,6 +956,13 @@ and it will create a button dependant on those variables.
     background-color: #2574a8; }
   .blue-btn:active, .comment-reply-link:active, #submit:active {
     background-color: #2472a4; }
+
+.primary-btn {
+  background-color: #F15D3B; }
+  .primary-btn:hover, .primary-btn:focus {
+    background-color: #f04d28; }
+  .primary-btn:active {
+    background-color: #ef4923; }
 
 /******************************************************************
 Site Name:
@@ -1425,7 +1431,8 @@ body {
             align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center; }
+            justify-content: center;
+    padding: 0; }
   .col-1_3 .headline {
     border-bottom: 2px solid white;
     text-align: center;
@@ -1557,7 +1564,8 @@ body {
     color: #fff;
     font-weight: 600;
     letter-spacing: 1px;
-    font-size: 25px; }
+    font-size: 23px;
+    line-height: 1.2; }
   .home_page .event_content, .footer_blocks .event_content {
     font-family: Verdana, Helvetica, Arial, sans-serif;
     font-size: 15px;
@@ -2143,7 +2151,8 @@ FOOTER STYLES
   .footer .social-icons {
     float: right;
     line-height: 1;
-    margin-top: 10px; }
+    margin-top: 10px;
+    margin-botton: 10px; }
     .footer .social-icons a, .footer .social-icons a:visited {
       color: #fff;
       text-decoration: none;
@@ -2171,6 +2180,7 @@ FOOTER STYLES
   font-family: Oswald, Helvetica, Arial, sans-serif;
   font-size: 12px;
   text-transform: uppercase;
+  margin-top: 15px;
   float: left; }
 
 /*********************

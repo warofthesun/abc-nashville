@@ -29,7 +29,7 @@ function bones_ahoy() {
   load_theme_textdomain( 'bonestheme', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
-  //require_once( 'library/custom-post-type.php' );
+  require_once( 'library/custom-post-type.php' );
 
   // launching operation cleanup
   add_action( 'init', 'bones_head_cleanup' );
@@ -66,6 +66,8 @@ function bones_ahoy() {
 add_action( 'after_setup_theme', 'bones_ahoy' );
 
 
+
+
 /************* OEMBED SIZE OPTIONS *************/
 
 if ( ! isset( $content_width ) ) {
@@ -78,26 +80,9 @@ if ( ! isset( $content_width ) ) {
 add_image_size( 'page-header', 1040, 405, true );
 add_image_size( 'section-one', 690, 405, true );
 add_image_size( 'section-three', auto, 273, true );
+
+
 /*
-to add more sizes, simply copy a line from above
-and change the dimensions & name. As long as you
-upload a "featured image" as large as the biggest
-set width or height, all the other sizes will be
-auto-cropped.
-
-To call a different size, simply change the text
-inside the thumbnail function.
-
-For example, to call the 300 x 100 sized image,
-we would use the function:
-<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-for the 600 x 150 image:
-<?php the_post_thumbnail( 'bones-thumb-600' ); ?>
-
-You can change the names and dimensions to whatever
-you like. Enjoy!
-*/
-
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
@@ -107,50 +92,13 @@ function bones_custom_image_sizes( $sizes ) {
     ) );
 }
 
-/*
+
 The function above adds the ability to use the dropdown menu to select
 the new images sizes you have just created from within the media manager
 when you add media to your content blocks. If you add more image sizes,
 duplicate one of the lines in the array and name it according to your
 new image size.
 */
-
-/************* THEME CUSTOMIZE *********************/
-
-/*
-  A good tutorial for creating your own Sections, Controls and Settings:
-  http://code.tutsplus.com/series/a-guide-to-the-wordpress-theme-customizer--wp-33722
-
-  Good articles on modifying the default options:
-  http://natko.com/changing-default-wordpress-theme-customization-api-sections/
-  http://code.tutsplus.com/tutorials/digging-into-the-theme-customizer-components--wp-27162
-
-  To do:
-  - Create a js for the postmessage transport method
-  - Create some sanitize functions to sanitize inputs
-  - Create some boilerplate Sections, Controls and Settings
-*/
-
-function bones_theme_customizer($wp_customize) {
-  // $wp_customize calls go here.
-  //
-  // Uncomment the below lines to remove the default customize sections
-
-  // $wp_customize->remove_section('title_tagline');
-  // $wp_customize->remove_section('colors');
-  // $wp_customize->remove_section('background_image');
-  // $wp_customize->remove_section('static_front_page');
-  // $wp_customize->remove_section('nav');
-
-  // Uncomment the below lines to remove the default controls
-  // $wp_customize->remove_control('blogdescription');
-
-  // Uncomment the following to change the default section titles
-  // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
-  // $wp_customize->get_section('background_image')->title = __( 'Images' );
-}
-
-add_action( 'customize_register', 'bones_theme_customizer' );
 
 /************* ACTIVE SIDEBARS ********************/
 
@@ -191,120 +139,6 @@ function bones_register_sidebars() {
 
 	*/
 } // don't remove this bracket!
-
-/* BEGIN MY FUNCTION - THIS IS TO ONLY SHOW THE DATE IN THE NEXT SEMINAR BLOCK */
-
-if ( ! function_exists( 'eventbrite_event_date' ) ) :
-/**
- * Output event information such as date, time, venue, and organizer
- */
-function eventbrite_event_date() {
-  // Determine our separator.
-  $separator = apply_filters( 'eventbrite_meta_separator', '<span class="sep"> &middot; </span>' );
-
-  // Start our HTML output with the event time.
-  $time = '<span class="event-time">' . eventbrite_event_day() . '</span>';
-
-  // Assemble our HTML. Yugly.
-  $html = sprintf( _x( '%1$s%2$s%3$s%4$s', '%1$s: time, %2$s: venue, %3$s: organizer, %4$s: event details (only on index views)', 'eventbrite-api' ),
-    $time,
-    $venue,
-    $organizer,
-    $details
-  );
-
-  echo apply_filters( 'eventbrite_event_date', $html, $time, $venue, $organizer, $details );
-}
-endif;
-
-if ( ! function_exists( 'eventbrite_event_day' ) ) :
-/**
- * Return an event's time.
- *
- * @return string Event time.
- */
-function eventbrite_event_day() {
-  // Determine if the end time needs the date included (in the case of multi-day events).
-
-
-  // Assemble the full event time string.
-  $event_time = sprintf(
-    _x( '%1$s  %2$s', 'Event date and time. %1$s = start time, %2$s = end time', 'eventbrite_api' ),
-    esc_html( mysql2date( 'M j ', eventbrite_event_start()->local ) ),
-    esc_html( $end_time )
-  );
-
-  return $event_time;
-}
-endif;
-/* END MY FUNCTION */
-
-/* Getting Eventbrite to work
-
-function wvega_850_filter_event_permalink( $url ) { // eg. http://mysite.com/events/july-test-drive-11829569561
-    if ( function_exists( 'eventbrite_is_event' ) && eventbrite_is_event() ) {
-        $url = sprintf( '%1$s/%2$s/%3$s-%4$s/',
-            esc_url( home_url() ),                             // protocol://domain
-            sanitize_title( get_queried_object()->post_name ), // page-with-eventbrite-template
-            sanitize_title( get_post()->post_title ),          // event-title
-            get_post()->event_id                               // event ID
-        );
-    }
-
-    return $url;
-}
-add_filter( 'post_link', 'wvega_850_filter_event_permalink', 11 );
-
-function wvega_850_eventbrite_workaround( $post ) {
-    if ( ! is_a( $post, 'Eventbrite_Event' ) ) {
-        return;
-    }
-
-    if ( ! is_integer( $post->ID ) ) {
-        $post->event_id = $post->ID;
-    }
-}
-add_action( 'the_post', 'wvega_850_eventbrite_workaround' );
-
-function wvega_850_http_api_curl( $handle, $r, $url ) {
-    if ( false === strpos( $url, 'www.eventbriteapi.com' ) || false === strpos( $url, '2147483647' ) ) {
-        return;
-    }
-
-    $eventbrite_id = get_query_var( 'eventbrite_id' );
-
-    if ( empty( $eventbrite_id ) ) {
-        return;
-    }
-
-    $new_url = str_replace( '2147483647', $eventbrite_id, $url );
-    curl_setopt( $handle, CURLOPT_URL, $new_url);
-}
-add_action( 'http_api_curl', 'wvega_850_http_api_curl', 10, 3 );
-
-function wvega_850_eventbrite_transient_name( $transient_name, $endpoint, $params ) {
-    if ( $endpoint == 'event_details' ) {
-        $params['p'] = get_query_var( 'eventbrite_id' );
-        $transient_name = 'eventbrite_' . md5( $endpoint . implode( $params ) );
-    }
-
-    return $transient_name;
-}
-add_filter( 'eventbrite_transient_name', 'wvega_850_eventbrite_transient_name', 10, 3 );
-
-function wvega_850_eventbrite_ticket_form_widget( $form_widget ) {
-    $event_id = get_post()->event_id;
-
-    if ( empty( $event_id ) ) {
-        return $form_widget;
-    }
-
-    return preg_replace( '/eid=\d+/', 'eid=' . urlencode( $event_id ), $form_widget );
-}
-add_filter( 'eventbrite_ticket_form_widget', 'wvega_850_eventbrite_ticket_form_widget' );
-
- END Getting Eventbrite to work */
-
 
 /************* COMMENT LAYOUT *********************/
 
@@ -373,5 +207,46 @@ function bones_fonts() {
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
+
+// 1. customize ACF path
+add_filter('acf/settings/path', 'my_acf_settings_path');
+function my_acf_settings_path( $path ) {
+    // update path
+    $path = get_stylesheet_directory() . '/inc/acf/';
+    // return
+    return $path;
+}
+// 2. customize ACF dir
+add_filter('acf/settings/dir', 'my_acf_settings_dir');
+function my_acf_settings_dir( $dir ) {
+    // update path
+    $dir = get_stylesheet_directory_uri() . '/inc/acf/';
+    // return
+    return $dir;
+}
+// 3. Hide ACF field group menu item
+//add_filter('acf/settings/show_admin', '__return_false');
+
+// 4. Include ACF
+include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
+
+// Turn on ACF Options Page
+if( function_exists('acf_add_options_page') ) {
+
+  acf_add_options_page(array(
+    'page_title' 	=> 'Theme General Settings',
+    'menu_title'	=> 'Theme Settings',
+    'menu_slug' 	=> 'theme-general-settings',
+    'capability'	=> 'edit_posts',
+    'redirect'		=> true
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Site Settings',
+    'menu_title'	=> 'Settings',
+    'parent_slug'	=> 'theme-general-settings',
+  ));
+
+}
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

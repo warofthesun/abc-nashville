@@ -186,6 +186,7 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding: 0;
 	}
 
 	.headline {
@@ -356,7 +357,8 @@ body {
 		color: $white;
 		font-weight: 600;
 		letter-spacing: 1px;
-		font-size: 25px;
+		font-size: 23px;
+		line-height: 1.2;
 	}
 
 	.event_content {
@@ -1364,6 +1366,7 @@ FOOTER STYLES
 		float:right;
 		line-height:1;
 		margin-top:10px;
+		margin-botton: 10px;
 
 		a, a:visited {
 			color:$white;
@@ -1406,5 +1409,6 @@ FOOTER STYLES
 		font-family:$sans-display;
 		font-size:12px;
 		text-transform:uppercase;
+		margin-top:15px;
 		float:left;
 	}
